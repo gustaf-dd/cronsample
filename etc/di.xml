@@ -1,0 +1,15 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+<type name="Magento\SampleMinimal\Logger\Handler\ConnectorLogHandler">
+    <arguments>
+        <argument name="filesystem" xsi:type="object">Magento\Framework\Filesystem\Driver\File</argument>
+    </arguments>
+</type>
+<type name="Magento\SampleMinimal\Logger\Logger">
+<arguments>
+    <argument name="name" xsi:type="string">dotdigital</argument>
+    <argument name="handlers"  xsi:type="array">
+        <item name="connector_log_handler" xsi:type="object">Magento\SampleMinimal\Logger\Handler\ConnectorLogHandler</item>
+    </argument>
+</arguments>
+</type>
+</config>
