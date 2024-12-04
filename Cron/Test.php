@@ -16,6 +16,9 @@ class Test {
      * @return void
      */
     public function execute() {
-        $this->logger->info('Cron Works');
+        $writer = new \Zend_Log_Writer_Stream(BP . '/var/log/dotdigital.log');
+        $logger = new \Zend_Log();
+        $logger->addWriter($writer);
+        $logger->info('custom log');
     }
 }
